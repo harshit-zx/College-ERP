@@ -1,4 +1,3 @@
-
 import { Routes, Route, Navigate } from "react-router-dom";
 
 import App from "../App";
@@ -16,29 +15,38 @@ import UsersPage from "../pages/superadmin/Users";
 import Analytics from "../pages/superadmin/Analytics";
 import Settings from "../pages/superadmin/Settings";
 
-// collage
 import CollegeAdminLayout from "../layouts/CollegeAdminLayout";
 import CollegeDashboard from "../pages/college/Dashboard";
 import Students from "../pages/college/Students";
-import Faculty from "../pages/college/Faculty";  
+import Faculty from "../pages/college/Faculty";
 import Courses from "../pages/college/Courses";
 import Admissions from "../pages/college/Admissions";
 import CollageAttendance from "../pages/college/Attendance";
 import Fees from "../pages/college/Fees";
 import CollageExams from "../pages/college/CollageExams";
+import Reports from "../pages/college/Reports";
+import CollageSettings from "../pages/college/CollageSettings";
+
+function CollegeModulePlaceholder({ title }) {
+  return (
+    <div className="rounded-xl border border-slate-200 bg-white p-6">
+      <h1 className="text-lg font-bold text-slate-900">{title}</h1>
+      <p className="mt-2 text-xs text-slate-500">
+        This module will be implemented in the next development milestone.
+      </p>
+    </div>
+  );
+}
 
 function AppRoutes() {
   return (
     <Routes>
-      {/* Public Website */}
       <Route path="/" element={<App />} />
 
-      {/* Authentication */}
       <Route path="/login" element={<Login />} />
       <Route path="/register" element={<RegisterCollege />} />
       <Route path="/forgot-password" element={<ForgotPassword />} />
 
-      {/* Super Admin */}
       <Route path="/superadmin" element={<SuperAdminLayout />}>
         <Route index element={<Dashboard />} />
         <Route path="colleges" element={<Colleges />} />
@@ -55,26 +63,26 @@ function AppRoutes() {
         <Route path="faculty" element={<Faculty />} />
         <Route path="courses" element={<Courses />} />
         <Route path="admissions" element={<Admissions />} />
-        <Route path="attendance" element={<CollageAttendance/>} />
-        <Route path="fees" element={<Fees/>} />
+        <Route path="attendance" element={<CollageAttendance />} />
+        <Route path="fees" element={<Fees />} />
+
+        {/* Examination Management */}
+        {/* <Route path="exam" element={<CollageExams />} /> */}
+        <Route path="exams" element={<CollageExams />} />
         <Route path="collage-exams" element={<CollageExams />} />
-        <Route path="reports" element={<CollegeModulePlaceholder title="College Reports" />} />
-        <Route path="settings" element={<CollegeModulePlaceholder title="College Settings" />} />
+
+        <Route
+          path="reports"
+          element={<Reports/>}
+        />
+        <Route
+          path="settings"
+          element={<CollageSettings/>}
+        />
       </Route>
 
       <Route path="*" element={<Navigate to="/" replace />} />
     </Routes>
-  );
-}
-
-function CollegeModulePlaceholder({ title }) {
-  return (
-    <div className="rounded-xl border border-slate-200 bg-white p-6">
-      <h1 className="text-lg font-bold text-slate-900">{title}</h1>
-      <p className="mt-2 text-xs text-slate-500">
-        This module will be implemented in the next development milestone.
-      </p>
-    </div>
   );
 }
 
