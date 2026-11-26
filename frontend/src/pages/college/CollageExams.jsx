@@ -176,7 +176,7 @@ function printAdmitCard(exam, student, registrationNo) {
   popup.document.close();
 }
 
-export default function Exams() {
+export default function CollageExams() {
   const [tab, setTab] = useState("overview");
 
   const [exams, setExams] = useState(() =>

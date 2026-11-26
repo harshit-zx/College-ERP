@@ -25,7 +25,7 @@ import Courses from "../pages/college/Courses";
 import Admissions from "../pages/college/Admissions";
 import CollageAttendance from "../pages/college/Attendance";
 import Fees from "../pages/college/Fees";
-import CollageExams from "../pages/college/Exams";
+import CollageExams from "../pages/college/CollageExams";
 
 function AppRoutes() {
   return (
@@ -57,24 +57,13 @@ function AppRoutes() {
         <Route path="admissions" element={<Admissions />} />
         <Route path="attendance" element={<CollageAttendance/>} />
         <Route path="fees" element={<Fees/>} />
-        <Route path="exams" element={<CollageExams />} />
+        <Route path="collage-exams" element={<CollageExams />} />
         <Route path="reports" element={<CollegeModulePlaceholder title="College Reports" />} />
         <Route path="settings" element={<CollegeModulePlaceholder title="College Settings" />} />
       </Route>
 
       <Route path="*" element={<Navigate to="/" replace />} />
     </Routes>
-  );
-}
-
-function ComingSoon({ name }) {
-  return (
-    <div className="flex min-h-[60vh] flex-col items-center justify-center text-center">
-      <h2 className="text-2xl font-bold text-slate-900">{name}</h2>
-      <p className="mt-3 text-sm text-slate-500">
-        This module will be developed in an upcoming milestone.
-      </p>
-    </div>
   );
 }
 

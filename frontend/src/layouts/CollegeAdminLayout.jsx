@@ -30,7 +30,7 @@ const navigation = [
   { label: "Admissions", path: "/college/admissions", icon: ClipboardList },
   { label: "Attendance", path: "/college/attendance", icon: CalendarCheck },
   { label: "Fees & Payments", path: "/college/fees", icon: Wallet },
-  { label: "Exam", path: "/college/exam", icon: BookOpenCheck },
+  { label: "Exam", path: "/college/collage-exams", icon: BookOpenCheck },
   { label: "Reports", path: "/college/reports", icon: BarChart3 },
   { label: "Settings", path: "/college/settings", icon: Settings },
 ];
